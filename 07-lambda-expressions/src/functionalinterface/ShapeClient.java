@@ -1,4 +1,4 @@
-package lambdaexpressions;
+package functionalinterface;
 
 public class ShapeClient {
 

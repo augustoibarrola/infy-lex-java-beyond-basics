@@ -1,4 +1,4 @@
-package lambdaexpressions;
+package functionalinterface;
 
 @FunctionalInterface
 public interface Shape {
