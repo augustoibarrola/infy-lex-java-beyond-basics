@@ -19,9 +19,20 @@ public class ParallelStreamsCreation {
 		Stream<Integer> data2 = Stream.of(5,15,25,35,45,55,65,75,85,95);
 		Stream<Integer> parallelData2 = data2.parallel();
 		
-		System.out.println("***** Order of Execution (Not Guaranteed *****");
+		System.out.println("***** Order of Execution (Not Guaranteed) *****");
 		
 		parallelData1.forEach(System.out::println);
+		
+		System.out.println("***** Order of Execution (Ordered) *****");
+		
+		parallelData2.forEachOrdered(System.out::println);
+		
+		System.out.println("***** Parallel to Sequential Stream *****");
+		
+		Stream.of(5,15,25,35,45,55,65,75,85,95)
+			.parallel()
+			.sequential()
+			.forEach(System.out::println);
 
 	}
 
