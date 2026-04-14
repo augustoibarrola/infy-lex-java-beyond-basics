@@ -1,0 +1,28 @@
+package com.streams.parallel.demo;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class ParallelStreamsCreation {
+
+	public static void main(String[] args) {
+		
+		List<Integer> data1 = new ArrayList<Integer>();
+		
+		for(int i = 0; i < 100; i=i+10) {
+			data1.add(i);
+		}
+		
+		Stream<Integer> parallelData1 = data1.parallelStream();
+		
+		Stream<Integer> data2 = Stream.of(5,15,25,35,45,55,65,75,85,95);
+		Stream<Integer> parallelData2 = data2.parallel();
+		
+		System.out.println("***** Order of Execution (Not Guaranteed *****");
+		
+		parallelData1.forEach(System.out::println);
+
+	}
+
+}
