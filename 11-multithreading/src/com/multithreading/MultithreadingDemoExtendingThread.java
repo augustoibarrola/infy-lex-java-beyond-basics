@@ -9,6 +9,7 @@ public class MultithreadingDemoExtendingThread extends Thread {
 
 	}
 
+	@Override
 	public void run() {
 		System.out.println("Thread created by extending the Thread Class.");
 	}
