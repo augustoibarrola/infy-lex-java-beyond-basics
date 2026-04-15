@@ -23,7 +23,7 @@ public class DemoReentrantLock {
 	
 	public void deposit(int amount) {
 		lock.lock();
-		System.out.print("Initial Time: " + LocalTime.now());
+		System.out.println("Initial Time: " + LocalTime.now());
 		getBalance();
 		try {
 			Thread.sleep(10000);
