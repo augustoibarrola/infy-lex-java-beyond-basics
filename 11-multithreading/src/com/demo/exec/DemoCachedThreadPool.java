@@ -1,14 +1,13 @@
-package com.demo.executor.framework;
+package com.demo.exec;
 
-import java.time.LocalTime;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class DemoFixedThreadPool {
+public class DemoCachedThreadPool {
 
 	public static void main(String[] args) {
-		
-		ExecutorService executor = Executors.newFixedThreadPool(2);
+
+		ExecutorService executor = Executors.newCachedThreadPool();
 		
 		Runnable task1 = () -> System.out.println("Running Task 1: " + Thread.currentThread().getName());
 		Runnable task2 = () -> System.out.println("Running Task 2: " + Thread.currentThread().getName());
@@ -16,6 +15,12 @@ public class DemoFixedThreadPool {
 		
 		executor.execute(task1);
 		executor.execute(task2);
+//		Uncomment the below and run to see how the threads are reused
+//		try {
+//			Thread.sleep(7000);
+//		}catch(InterruptedException e) {
+//			Thread.currentThread().interrupt();
+//		}
 		executor.execute(task3);
 		
 		executor.shutdown();

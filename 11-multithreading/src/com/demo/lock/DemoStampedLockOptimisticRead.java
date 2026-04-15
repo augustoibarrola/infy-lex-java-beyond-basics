@@ -1,4 +1,4 @@
-package com.demo.locks;
+package com.demo.lock;
 
 import java.util.concurrent.locks.StampedLock;
 

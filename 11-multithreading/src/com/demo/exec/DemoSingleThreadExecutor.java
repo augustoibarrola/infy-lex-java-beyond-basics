@@ -1,4 +1,4 @@
-package com.demo.executor.framework;
+package com.demo.exec;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

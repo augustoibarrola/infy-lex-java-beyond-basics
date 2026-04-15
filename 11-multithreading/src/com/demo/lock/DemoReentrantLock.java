@@ -1,4 +1,4 @@
-package com.demo.locks;
+package com.demo.lock;
 
 import java.time.LocalTime;
 import java.util.concurrent.ExecutorService;

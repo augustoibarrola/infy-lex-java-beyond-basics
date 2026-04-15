@@ -1,10 +1,10 @@
-package com.demo.synch;
+package com.demo.sync;
 
-public class DemoSynchronizedBlock {
+public class DemoSynchronizedMethod {
 	
 	private int balance = 2000;
 	
-	public void deposit(int amount) {
+	public synchronized void deposit(int amount) {
 		System.out.println("Initial Balance: " + balance);
 		
 		try {
@@ -19,10 +19,10 @@ public class DemoSynchronizedBlock {
 
 	public static void main(String[] args) {
 		
-		var object = new DemoSynchronizedBlock();
+		var object = new DemoSynchronizedMethod();
 		
-		Runnable run1 = () -> { synchronized(object){ object.deposit(1000); }};
-		Runnable run2 = () -> { synchronized(object){ object.deposit(1000);	}};
+		Runnable run1 = () -> object.deposit(1000);
+		Runnable run2 = () -> object.deposit(1000);
 		
 		var thread1 = new Thread(run1);
 		var thread2 = new Thread(run2);

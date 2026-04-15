@@ -1,4 +1,4 @@
-package com.multithreading;
+package com.demo.thread;
 
 public class MultithreadingDemoJoinMethod {
 
